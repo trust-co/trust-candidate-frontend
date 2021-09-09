@@ -1,0 +1,12 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: var(--color-light-blue);
+}
+
+.quote {
+  color: var(--color-gold);
+  font-family: "Archivo Black";
+}

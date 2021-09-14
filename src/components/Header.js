@@ -1,12 +1,18 @@
 import logo from "../assets/afcRichmondLogo.png";
-import './Header.css'
+import "./Header.css";
 import StatTotals from "./StatTotals";
 
-const Header = () => (
+const Header = ({ playerStats }) => (
   <header className="header">
-    <img src={logo} alt="teamLogo"/>
-    <div className="teamName">AFC Richmond<div className="subhead">Player Roster</div></div>
-    <StatTotals />
+    <img src={logo} alt="teamLogo" />
+    <div className="teamName">
+      AFC Richmond<div className="subhead">Player Roster</div>
+    </div>
+    <StatTotals
+      totalWages={playerStats.totalWages}
+      totalGoals={playerStats.totalGoals}
+      totalGames={playerStats.totalGames}
+    />
   </header>
 );
 

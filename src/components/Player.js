@@ -1,4 +1,5 @@
 import "./Player.css";
+import { formatCurrency } from "../util";
 
 const Player = ({ player }) => (
   <div className="playerHolder">
@@ -13,8 +14,7 @@ const Player = ({ player }) => (
       <div className="playerStatsGrid">
         <div className="playerStat">Games Played: <span className="playerStatDetail">{player.games_played}</span></div>
         <div className="playerStat">Goals Scored: <span className="playerStatDetail">{player.goals_scored}</span></div>
-        {/* TODO: Format this number to correctly display as currency */}
-        <div className="playerStat">Wages: <span className="playerStatDetail">{player.wages}</span></div>
+        <div className="playerStat">Wages: <span className="playerStatDetail">{formatCurrency(player.wages)}</span></div>
         <div className="playerStat">
           {player.active ? (
             <span className="playerStatDetail playerActive">ACTIVE</span>

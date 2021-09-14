@@ -14,12 +14,13 @@
 .statLabel {
   font-family: "Archivo Black";
   text-transform: uppercase;
+  color: var(--color-blue);
 }
 
 .statValue {
   font-family: "Archivo Black";
   margin-left: 4px;
-  color: var(--color-gold);
+  color: var(--color-light-blue);
   font-size: 24px;
   font-weight: 700;
 }

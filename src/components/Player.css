@@ -1,0 +1,57 @@
+.playerHolder {
+  border-radius: 6px;
+  padding: 12px;
+  background: #eee;
+}
+
+.playerInfoFlex {
+  display: flex;
+  flex-direction: column;
+}
+
+.playerDetails {
+  display: flex;
+  align-items: center;
+  padding-bottom: 4px;
+  border-bottom: 3px solid #aaa;
+}
+
+.playerName {
+  font-size: 24px;
+  font-family: "Archivo Black";
+  padding-right: 12px;
+  border-right: 2px solid #ddd;
+}
+
+.playerDetail {
+  margin-left: 12px;
+  font-size: 20px;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--color-light-blue);
+}
+
+.playerStatsGrid {
+  padding-top: 12px;
+  display: grid;
+  grid-gap: 12px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.playerStat {
+  font-weight: 600;
+}
+
+.playerStatDetail {
+  font-family: "Archivo Black";
+  font-weight: 400;
+  color: var(--color-light-blue);
+}
+
+.playerActive {
+  color: var(--color-green);
+}
+
+.playerInactive {
+  color: var(--color-red);
+}

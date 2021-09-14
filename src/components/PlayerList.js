@@ -1,9 +1,10 @@
+import Player from './Player'
 import './PlayerList.css';
 
 
-const PlayerList = () => (
+const PlayerList = ({players}) => (
   <div className="playersGrid">
-    ** List players here **
+    {players.map((player) => <Player player={player} key={player.id} />)}
   </div>
 )
 

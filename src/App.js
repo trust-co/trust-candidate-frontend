@@ -8,15 +8,20 @@ import { getAllPlayers } from "./api";
 const positions = ["GK", "RB", "LB", "CB", "CM", "LM", "ST", "LW", "FW"];
 
 function App() {
+  const [error, setError] = useState(false);
   const [playerData, setPlayerData] = useState([]);
   const [positionFilter, setPositionFilter] = useState("all");
 
   useEffect(() => {
-    const fetchPlayerData = async () => {
-      const players = await getAllPlayers(positionFilter);
-      setPlayerData(players);
-    };
-    fetchPlayerData();
+    const getData = async() => {
+    try {
+      const response = await getAllPlayers(positionFilter);
+      setPlayerData(response);
+    } catch (error) {
+      setError(true);
+    }
+  };
+  getData();
   }, [positionFilter]);
 
   const playerStats = useMemo(
@@ -35,6 +40,10 @@ function App() {
 
   return (
     <Layout playerStats={playerStats}>
+        {error ? (
+        <div className="error">Error Loading Players</div>
+      ) : (
+        <>
       <div>
         <label>Filter by position: </label>
         <select
@@ -48,6 +57,7 @@ function App() {
         </select>
       </div>
       <PlayerList players={playerData} />
+      </>)}
     </Layout>
   );
 }

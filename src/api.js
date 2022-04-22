@@ -1,6 +1,8 @@
-const API_URL = 'http://localhost:8000';
+import playerData from "./data/playerData";
 
-export const getAllPlayers = async () => {
-  const response = await fetch(`${API_URL}/players`);
-  return response.json();
-}
+const apiResponse = playerData;
+
+export const getAllPlayers = () =>
+  new Promise((resolve) => {
+    setTimeout(() => resolve(apiResponse), 2000);
+  });
